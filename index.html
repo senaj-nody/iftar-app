@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iftar.eu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="startButton">🎵 Klikni za zvuk</button>
+        
+        <!-- Search box -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="citySearch" 
+                placeholder="Pretraži grad (npr. Sarajevo, Berlin...)"
+                class="search-input"
+            >
+            <div id="cityResults" class="search-results"></div>
+        </div>
+
+        <div id="timer">00:00:00</div>
+
+        <div class="audio-controls" style="display: none;">
+            <button id="playPauseBtn">⏸</button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
