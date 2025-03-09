@@ -76,17 +76,22 @@ async function searchCities(query) {
 
 // Audio sistem
 function initializeAudio() {
+    // Inicijaliziraj ilahije i odmah ih pusti
     audio.ilahije = new Howl({
         src: ['audio/ilahije.mp3'],
         loop: true,
         volume: 1,
-        html5: true // Dodano za bolju kompatibilnost
+        html5: true, // Poboljšana kompatibilnost
+        onload: function() {
+            this.play(); // Automatsko puštanje nakon učitavanja
+            document.getElementById('playPauseBtn').textContent = '⏸';
+        }
     });
 
     audio.ezan = new Howl({
         src: ['audio/ezan.mp3'],
         volume: 1,
-        html5: true // Dodano za bolju kompatibilnost
+        html5: true
     });
 
     // Kontrole
